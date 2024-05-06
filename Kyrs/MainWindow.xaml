@@ -1,0 +1,126 @@
+﻿<Window x:Class="Kyrs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kyrs"
+        mc:Ignorable="d"
+        Title="Добавление комплектующих" Height="645" Width="1100" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent" FontSize="18">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250*"/>
+            <ColumnDefinition Width="247*"/>
+            <ColumnDefinition Width="429*"/>
+            <ColumnDefinition Width="auto"/>
+
+        </Grid.ColumnDefinitions>
+        <Grid.Effect>
+            <DropShadowEffect BlurRadius="30" ShadowDepth="1" Opacity="0.4"/>
+        </Grid.Effect>
+        <Border Background="#6a7eee" CornerRadius="10 0 0 10" ClipToBounds="True" Grid.ColumnSpan="2">
+            <Border.Clip>
+                <RectangleGeometry Rect="0,0,700,605" RadiusX="10" RadiusY="10"/>
+            </Border.Clip>
+            <Grid>
+                <StackPanel Margin="0 12 0 0" VerticalAlignment="Top">
+                    
+                    <TextBlock FontWeight="Light" FontSize="26" Foreground="White" TextAlignment="Center" Text="Добавление комплектующих" Width="348" Height="130"/>
+
+                </StackPanel>
+                <Ellipse Width="500" Height="500" VerticalAlignment="Bottom" Fill="#80c0ff" Margin="50 0 0 -200" Opacity="0.6"/>
+                <Ellipse Width="300" Height="300" VerticalAlignment="Bottom" Fill="#83c2ff" Margin="-450 0 0 30" Opacity="0.3"/>
+                <Ellipse Width="400" Height="400" VerticalAlignment="Bottom" Fill="#84c3ff" Margin="-320 0 0 -120" Opacity="0.3"/>
+                <Ellipse Width="250" Height="250" VerticalAlignment="Bottom" Fill="#81c2ff" Margin="-380 0 0 -120" />
+                <Ellipse Width="400" Height="400" VerticalAlignment="Bottom" Fill="#87c5ff" Margin="280 0 0 -70" Opacity="0.8"/>
+            </Grid>
+
+        </Border>
+        <DataGrid x:Name="componentsDataGrid" SelectionChanged="componentsDataGrid_SelectionChanged"  Grid.Column="0" Margin="0,50,0,150" AutoGenerateColumns="False" Grid.ColumnSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" />
+                <DataGridTextColumn Header="Производитель" Binding="{Binding Manufacturer}" />
+                <DataGridTextColumn Header="Цена за единицу" Binding="{Binding PricePerUnit}" />
+                <DataGridTextColumn Header="Категория" Binding="{Binding Category}" />
+                <DataGridTextColumn Header="Артикул" Binding="{Binding ArticleNumber}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10">
+            <Border VerticalAlignment="Top" Background="#6a7eee" Height="50" Width="250" CornerRadius="10">
+                <Button Content="Изменить" Background="Transparent" Margin="5,5,5,5" Foreground="White" FontSize="23" BorderThickness="0" Click="UpdateButton_Click"/>
+            </Border>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Margin="10,0,0,10">
+            <Border VerticalAlignment="Top" Background="#6a7eee" Height="50" Width="250" CornerRadius="10">
+                <Button Content="Удалить" Background="Transparent" Margin="5,5,5,5" Foreground="White" FontSize="23" BorderThickness="0" Click="DeleteButton_Click"/>
+            </Border>
+        </StackPanel>
+
+        <Border Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10">
+            <Button Content="Назад" Background="Transparent" Margin="5" Foreground="White" FontSize="18" BorderThickness="0" Click="BackButton_Click"/>
+        </Border>
+
+
+        <Border Grid.Column="2" Background="White"    BorderBrush="Transparent" Margin="1,0,0,0">
+            <Grid Margin="6 0 6 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="9*"/>
+                    <RowDefinition Height="*"/>
+
+
+                </Grid.RowDefinitions>
+
+
+
+                <StackPanel Grid.Row="1" Margin="0 1 0 0">
+
+                    <Label Content="Наименование:"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <TextBox x:Name="txtComponentName" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Label Content="Категория"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <ComboBox x:Name="comboBoxCategory" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Label Content="Артикул:"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <TextBox x:Name="txtArticleNumber" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Label Content="Количество:"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <TextBox x:Name="txtQuantity" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Label Content="Производитель:"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <TextBox x:Name="txtManufacturer" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                    <Label Content="Цена за единицу:"/>
+                    <Border Background="#80c0ff" Width="320" CornerRadius="5" Height="40" Margin="6" Opacity="0.7">
+                        <TextBox x:Name="txtPricePerUnit" Background="Transparent" BorderThickness="0" Width="300" VerticalAlignment="Center"/>
+                    </Border>
+
+                </StackPanel>
+                <Border VerticalAlignment="Top" Grid.Row="2" Background="#6a7eee" Height="50" Width="250" CornerRadius="10">
+                    <Button Content="Добавить" Background="Transparent" Margin="5,5,5,5" Foreground="White" FontSize="23" BorderThickness="0" Click="Button_Click"/>
+                </Border>
+
+            </Grid>
+
+
+        </Border>
+
+        <Border Grid.Column="3"   Background="#81c2ff" CornerRadius="0 10 10 0"  BorderBrush="Transparent" >
+            <Border VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Row="2" Background="Red" Height="25" Width="25" CornerRadius="10">
+                <Button Content="X" Background="Transparent" Margin="5,5,5,5" Foreground="White" FontSize="10" BorderThickness="0" Click="CloseButton_Click"/>
+            </Border>
+        </Border>
+        <!-- Кнопка закрытия программы -->
+
+    </Grid>
+</Window>

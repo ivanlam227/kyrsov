@@ -1,0 +1,26 @@
+[
+  {
+    "Name": "Барабан",
+    "Quantity": 3,
+    "Manufacturer": "Samsung",
+    "PricePerUnit": 5000.0,
+    "Category": "Механические компоненты",
+    "ArticleNumber": null
+  },
+  {
+    "Name": "fsfsf",
+    "Quantity": 54,
+    "Manufacturer": "sdfsfs",
+    "PricePerUnit": 66565.0,
+    "Category": "Электрические компоненты",
+    "ArticleNumber": ""
+  },
+  {
+    "Name": "болт",
+    "Quantity": 10,
+    "Manufacturer": "фывфв44",
+    "PricePerUnit": 53.0,
+    "Category": "Механические компоненты",
+    "ArticleNumber": "фвфв"
+  }
+]

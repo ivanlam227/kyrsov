@@ -1,0 +1,20 @@
+[
+  {
+    "Login": "Admin",
+    "Email": "adadad",
+    "Password": "Admin",
+    "ConfirmPassword": "Admin"
+  },
+  {
+    "Login": "afaf",
+    "Email": "asfaf",
+    "Password": "sada",
+    "ConfirmPassword": "sada"
+  },
+  {
+    "Login": "Admin222",
+    "Email": "lyamin2003i@gmail.com",
+    "Password": "222",
+    "ConfirmPassword": "222"
+  }
+]
